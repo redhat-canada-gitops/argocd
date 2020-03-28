@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# No luck getting this to work so use patches in overlays, kustomize mentions variable
+# substitution onluy supported in certain places. Re-visit when have more time
+# vars:
+# - name: NAMESPACE
+#   objref:
+#     apiVersion: operators.coreos.com/v1
+#     kind: OperatorGroup
+#     name: argocd
+#   fieldref:
+#     fieldpath: metadata.name
+
+resources:
+- argocd-operatorgroup.yaml
+- argocd-subscription.yaml
