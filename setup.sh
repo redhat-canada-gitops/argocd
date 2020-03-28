@@ -13,8 +13,9 @@ sleep 15
 
 oc rollout status deploy/argocd-operator -n argocd
 
-echo "There should be some CRDs."
+echo "Listing Argo CD CRDs."
 oc get crd | grep argo
+
 
 echo "Deploying Argo CD instance"
 
