@@ -8,3 +8,4 @@ bases:
 
 resources:
 - cluster-role-binding.yaml
+- argocd-cm.yaml
