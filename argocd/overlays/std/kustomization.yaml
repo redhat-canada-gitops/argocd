@@ -20,4 +20,4 @@ configMapGenerator:
 - name: argocd-cm
   files:
   - resource.customizations
-  env: config.txt
+  
