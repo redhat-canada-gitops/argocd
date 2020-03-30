@@ -1,3 +1,5 @@
+application.instanceLabelKey: argocd.argoproj.io/instance
+
 PersistentVolumeClaim:
   health.lua: |
     hs = {}
