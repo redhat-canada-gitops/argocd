@@ -28,9 +28,3 @@ sleep 15
 oc rollout status deploy/argocd-server -n argocd
 
 echo "Argo CD ready!"
-
-echo ""
-echo "Printing default admin password:"
-oc -n argocd get pod -l "app.kubernetes.io/name=argocd-server" -o jsonpath='{.items[*].metadata.name}'
-echo ""
-echo ""
