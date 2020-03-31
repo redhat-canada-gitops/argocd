@@ -8,16 +8,3 @@ bases:
 
 resources:
 - cluster-role-binding.yaml
-
-# ConfigMap Generator Options
-generatorOptions:
-  labels:
-    app.kubernetes.io/name: argocd-cm
-    app.kubernetes.io/part-of: argocd
-  disableNameSuffixHash: true
-# Generate argocd-cm
-configMapGenerator:
-- name: argocd-cm
-  files:
-  - resource.customizations
-  
