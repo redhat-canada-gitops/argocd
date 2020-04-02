@@ -9,7 +9,7 @@ spec:
     image: quay.io/ablock/dex
     version: openshift-connector
     openShiftOAuth: true
-  ApplicationInstanceLabelKey: argocd.argoproj.io/instance
+  applicationInstanceLabelKey: argocd.argoproj.io/instance
   resourceCustomizations: |
     PersistentVolumeClaim:
       health.lua: |
@@ -31,6 +31,11 @@ spec:
         hs.status = "Progressing"
         hs.message = "Waiting for certificate"
         return hs
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      kinds:
+      - PipelineRun
   rbac:
     defaultPolicy: role:readonly
     policy: |
