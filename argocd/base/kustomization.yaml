@@ -6,3 +6,5 @@ namespace: argocd
 
 resources:
 - argocd.yaml
+- argocd-groups.yaml
+
