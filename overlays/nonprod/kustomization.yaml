@@ -1,0 +1,10 @@
+# Copy your sealed-secrets-secert into this dir before running apply -k
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- github.com/pittar-gitops/01-admin-cluster-config/overlays/00-argocd?ref=cluster-nonprod
+- github.com/pittar-gitops/02-admin-environment-config/overlays/00-argocd?ref=env-dev
+- github.com/pittar-gitops/02-admin-environment-config/overlays/00-argocd?ref=env-uat
+resources:
+- sealed-secrets-namespace.yaml
+- sealed-secrets-secret.yaml
