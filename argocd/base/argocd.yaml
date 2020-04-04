@@ -11,6 +11,18 @@ spec:
     openShiftOAuth: true
   applicationInstanceLabelKey: argocd.argoproj.io/instance
   resourceCustomizations: |
+    bitnami.com/SealedSecret:
+      ignoreDifferences: |
+        jsonPointers:
+        - /status
+    build.openshift.io/BuildConfig:
+      ignoreDifferences: |
+        jsonPointers:
+        - /status/lastVersion
+    route.openshift.io/Route:
+      ignoreDifferences: |
+        jsonPointers:
+        - /status/ingress
     PersistentVolumeClaim:
       health.lua: |
         hs = {}
