@@ -23,6 +23,10 @@ spec:
       ignoreDifferences: |
         jsonPointers:
         - /status/ingress
+    /ServiceAccount:
+      ignoreDifferences: |
+        jsonPointers:
+        - /imagePullSecrets
     PersistentVolumeClaim:
       health.lua: |
         hs = {}
