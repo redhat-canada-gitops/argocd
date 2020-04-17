@@ -4,8 +4,8 @@ metadata:
   name: argocd-operator
 spec:
   channel: alpha
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: argocd-operator
   source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: argocd-operator.v0.0.5
+  startingCSV: argocd-operator.v0.0.6
