@@ -13,7 +13,7 @@ sleep 10
 echo "Approving operator installation."
 IPNAME=$(oc get installplan -n argocd -o jsonpath='{range .items[*].metadata}{.name}{end}')
 echo "($IPNAME)"
-oc patch installplan $IPNAME --type=json -p='[{"op":"replace","path": "/spec/approved", "value": true}]'
+oc patch -n argocd installplan $IPNAME --type=json -p='[{"op":"replace","path": "/spec/approved", "value": true}]'
 
 echo "Pausing for 10 seconds for operator initialization..."
 
