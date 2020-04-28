@@ -8,7 +8,7 @@ spec:
   server:
     route: true
   dex:
-    image: quay.io/ablock/dex
+    image: quay.io/redhat-cop/dex:v2.22.0-openshift
     version: openshift-connector
     openShiftOAuth: true
   applicationInstanceLabelKey: argocd.argoproj.io/instance
