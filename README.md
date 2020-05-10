@@ -1,4 +1,4 @@
-# GitOps Setup
+# Argo CD Setup
 
 Install Argo CD Operator `0.0.8` from manifests.
 
