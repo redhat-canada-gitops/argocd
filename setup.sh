@@ -7,17 +7,8 @@ echo "Installing Argo CD Operator."
 
 oc apply -k argocd-operator/overlays/default
 
-echo "Pause 10 seconds for the creation of the InstallPlan."
-sleep 10
-
-echo "Approving operator installation."
-IPNAME=$(oc get installplan -n argocd -o jsonpath='{range .items[*].metadata}{.name}{end}')
-echo "($IPNAME)"
-oc patch -n argocd installplan $IPNAME --type=json -p='[{"op":"replace","path": "/spec/approved", "value": true}]'
-
-echo "Pausing for 10 seconds for operator initialization..."
-
-sleep 10
+echo "Pause 20 seconds for the creation and approval of the InstallPlan."
+sleep 20
 
 oc rollout status deploy/argocd-operator -n argocd
 
@@ -31,7 +22,7 @@ oc apply -k argocd/overlays/default
 
 echo "Waiting for Argo CD server to start..."
 
-sleep 15
+sleep 20
 
 oc rollout status deploy/argocd-server -n argocd
 
