@@ -6,7 +6,11 @@ metadata:
     profile: redhat-canada-gitops
 spec:
   server:
-    route: true
+    route:
+      enabled: true
+      tls:
+        termination: passthrough
+        insecureEdgeTerminationPolicy: Redirect
   dex:
     image: quay.io/redhat-cop/dex
     version: v2.22.0-openshift
