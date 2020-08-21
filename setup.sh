@@ -1,14 +1,15 @@
 #!/bin/bash
 
 LANG=C
+SLEEP_SECONDS=45
 
 echo ""
 echo "Installing Argo CD Operator."
 
 oc apply -k argocd-operator/overlays/default
 
-echo "Pause 20 seconds for the creation and approval of the InstallPlan."
-sleep 20
+echo "Pause $SLEEP_SECONDS seconds for the creation and approval of the InstallPlan."
+sleep $SLEEP_SECONDS
 
 oc rollout status deploy/argocd-operator -n argocd
 
@@ -22,7 +23,7 @@ oc apply -k argocd/overlays/default
 
 echo "Waiting for Argo CD server to start..."
 
-sleep 20
+sleep $SLEEP_SECONDS
 
 oc rollout status deploy/argocd-server -n argocd
 
