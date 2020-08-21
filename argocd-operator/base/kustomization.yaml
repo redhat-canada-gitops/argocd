@@ -15,4 +15,3 @@ kind: Kustomization
 resources:
   - argocd-operatorgroup.yaml
   - argocd-subscription.yaml
-  - serviceaccount.yaml

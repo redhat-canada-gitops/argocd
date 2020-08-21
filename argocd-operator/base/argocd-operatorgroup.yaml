@@ -7,4 +7,4 @@ metadata:
   name: argocd
 spec:
   targetNamespaces:
-  - something
+  - argocd
