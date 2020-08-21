@@ -16,5 +16,3 @@ resources:
   - argocd-operatorgroup.yaml
   - argocd-subscription.yaml
   - serviceaccount.yaml
-  - rbac.yaml
-  - installplan-approver-job.yaml

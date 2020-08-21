@@ -5,6 +5,7 @@ namespace: argocd
 
 bases:
 - ../../base
+- github.com/redhat-canada-gitops/catalog/installplan-approver/base
 
 resources:
 - namespace.yaml
