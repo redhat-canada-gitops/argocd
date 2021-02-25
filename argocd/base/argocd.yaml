@@ -99,6 +99,11 @@ spec:
       - tekton.dev
       kinds:
       - PipelineRun
+    - apiGroups:
+      - compliance.openshift.io
+      kinds:
+      - ComplianceCheckResult
+      - ComplianceRemediation      
   rbac:
     defaultPolicy: role:readonly
     policy: |
