@@ -1,6 +1,6 @@
 # Argo CD Setup
 
-Install Argo CD Operator `0.0.13` from manifests.
+Install Argo CD Operator `0.0.14` from manifests.
 
 # Setup
 
